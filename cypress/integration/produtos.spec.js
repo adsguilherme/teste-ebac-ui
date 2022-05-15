@@ -2,8 +2,8 @@
 
 describe("Funcionalidade Página de Produtos", () => {
   beforeEach(() => {
-    cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
-    //cy.visit('http://lojaebac.ebaconline.art.br/produtos/page/2/')
+    cy.visit('produtos')
+    // cy.visit('produtos/page/2')
   })
 
   it('Deve selecionar um produto da lista', () => {
@@ -20,9 +20,9 @@ describe("Funcionalidade Página de Produtos", () => {
     //cy.get('div[data-product-id="2559"]').first().click()
   })
 
-  it.only('Deve adicionar um produto ao carrinho', () => {
+  it('Deve adicionar um produto ao carrinho', () => {
 
-    let quantidade = 3
+    let quantidade = 2
 
     cy.get('[class="product-block grid"]')
       .contains('Ariel Roll Sleeve Sweatshirt')
@@ -51,6 +51,4 @@ describe("Funcionalidade Página de Produtos", () => {
   //     .type(2)
   //   cy.get('.single_add_to_cart_button').click()
   // })
-
-
 })
