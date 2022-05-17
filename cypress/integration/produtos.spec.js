@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+const produto = require('../fixtures/massa-produtos.json') 
+
 describe("Funcionalidade Página de Produtos", () => {
   beforeEach(() => {
     cy.visit('produtos')
@@ -37,6 +39,13 @@ describe("Funcionalidade Página de Produtos", () => {
 
     cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
     cy.get('.woocommerce-message').should('contain', quantidade + ' × “Ariel Roll Sleeve Sweatshirt” foram adicionados no seu carrinho.')
+  })
+
+
+  it.only('Deve adicionar um produto ao carrinho - Usando comandos customizados', () => {
+    //cy.addProduto('Aero Daily Fitness Tee', 'XS', 'Yellow', 2) // hard code
+    //Utilizando a chamada do import seguido das propriedades
+    cy.addProduto(produto.nomeProduto, produto.tamanho, produto.cor, produto.quantidade) // massa de dados dinâmica
   })
 
   // it.only('Deve adicionar um produto ao carrinho', () => {

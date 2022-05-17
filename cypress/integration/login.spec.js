@@ -26,8 +26,7 @@ context('Funcionalidade login', () => {
     cy.get('.woocommerce-form > .button').click() //.click é um método
     
     cy.get('.page-title').should('contain', 'Minha conta')
-    // cy.get('.page-title').contains('MINHA CONTA', { matchCase: false })
-    // Esse exemplo usando o método contains não seria uma asserção.
+    // cy.get('.page-title').contains('MINHA CONTA', { matchCase: false }) // Esse exemplo usando o método contains não seria uma asserção.
 
     cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, aluno_ebac (não é aluno_ebac? Sair)')
 
