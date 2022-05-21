@@ -41,7 +41,7 @@ context('Funcionalidade login', () => {
     
   })
 
-  it.only('Deve fazer login com sucesso - Usando fixture', () => {
+  it('Deve fazer login com sucesso - Usando fixture', () => {
     cy.fixture('perfil.json').then(dados => {
       cy.get('#username').type(dados.usuario)
       cy.get('#password').type(dados.senha, {log: false}) // {log: false} Garante que não seja apresentado dados sensíveis (senha) na execução do teste. 

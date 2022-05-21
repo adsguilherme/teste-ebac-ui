@@ -42,7 +42,7 @@ describe("Funcionalidade Página de Produtos", () => {
   })
 
 
-  it.only('Deve adicionar um produto ao carrinho - Usando comandos customizados', () => {
+  it('Deve adicionar um produto ao carrinho - Usando comandos customizados', () => {
     //cy.addProduto('Aero Daily Fitness Tee', 'XS', 'Yellow', 2) // hard code
     //Utilizando a chamada do import seguido das propriedades
     cy.addProduto(produto.nomeProduto, produto.tamanho, produto.cor, produto.quantidade) // massa de dados dinâmica
